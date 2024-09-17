@@ -1,3 +1,3 @@
 1. Because the bools are rotating randomly on each iteration, there is really no way to distingush, say, elements 1 and 2 from elements 2 and 4. Or elements 1 and 3 from elements 2 and 4. The random rotations kind of collpase all the choices you could make for which booleans to inspect to 2: either I'm going to inspect element 1 and 2, or element 1 and 3.
 
-2. See if you can convince yourself of the following statement to further narrow down possible solutions: any *optimal* (minimum number of steps) solution must alternate between selecting bits 1 & 2 and select bits 1 & 3 (WLOG).
+2. See if you can convince yourself of the following statement to further narrow down possible solutions: any *optimal* (minimum number of steps) solution must alternate between selecting bits 1 & 2 and select bits 1 & 3 (WLOG). (edit) I'm now not sure this is true, due to a kind of subtle thing. Either way the solution I provide doesn't follow this rule.

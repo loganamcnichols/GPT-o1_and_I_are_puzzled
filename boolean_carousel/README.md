@@ -1,0 +1,1 @@
+This problem was adapted from the brain teaser described [here](https://www.youtube.com/watch?v=nO6sDk6vO0g). I was curious if the model was struggling because it was having a hard time mapping the physical description to a pure logic puzzle. You can decide for yourself based on my version of the prompt and the solutions we get from the model.

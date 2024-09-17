@@ -1,0 +1,54 @@
+we took the prompt from the "you can do it!" example and added this: Again, there is a fully deterministic solution here. Let me see if I can nudge you in that direction. We didn't set this up to just randomly scramble the numbers after each step. It's a random *rotation*. There is structure preserved there upon which you must construct your solution.
+
+solution ( honestly quite bad):
+import random
+
+def rand_rotation(bool_list):
+    # Determine the number of positions to rotate
+    rotation = random.randint(0, 3)
+    
+    # Perform the rotation
+    return bool_list[-rotation:] + bool_list[:-rotation]
+
+def puzzle(bools):
+    # Step 1: Inspect positions 0 and 1 and set them to True
+    bools[0] = True
+    bools[1] = True
+    if all(bools) or not any(bools): return "success"
+    bools = rand_rotation(bools)
+
+    # Step 2: Inspect positions 2 and 3 and set them to True
+    bools[2] = True
+    bools[3] = True
+    if all(bools) or not any(bools): return "success"
+    bools = rand_rotation(bools)
+
+    # Remaining steps can be left empty as the condition is already met
+    if all(bools) or not any(bools): return "success"
+    bools = rand_rotation(bools)
+
+    if all(bools) or not any(bools): return "success"
+    bools = rand_rotation(bools)
+
+    if all(bools) or not any(bools): return "success"
+    bools = rand_rotation(bools)
+
+    if all(bools) or not any(bools): return "success"
+    bools = rand_rotation(bools)
+
+    return "failure"
+
+def generate_random_bools():
+    return [random.choice([True, False]) for _ in range(4)]
+
+def run_puzzle_tests(num_tests=1000):
+    for i in range(num_tests):
+        bool_list = generate_random_bools()
+        if puzzle(bool_list) == "failure":
+            return "failure"
+    return "success"
+
+if __name__ == "__main__":
+    print(run_puzzle_tests())
+
+
